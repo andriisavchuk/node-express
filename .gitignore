@@ -9,8 +9,8 @@
 # production
 /build
 
-# uncomment while develope
-# /config
+# keys for development
+/config/keys_dev.js
 
 # compiled output
 /dist

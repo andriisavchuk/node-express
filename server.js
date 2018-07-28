@@ -11,7 +11,7 @@ const posts = require('./api/routes/posts');
 const app = express();
 
 // DB Config
-// const db        = require('./config/db');
+// const db        = require('./config/keys');
 // mongoose.Promise = global.Promise;
 // mongoose.connect(db.mongoURI)
 //   .then(() => console.log('MongoDB connected...'))
