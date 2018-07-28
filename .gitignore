@@ -8,8 +8,9 @@
 
 # production
 /build
-/config
-/package-lock.json
+
+# uncomment while develope
+# /config
 
 # compiled output
 /dist

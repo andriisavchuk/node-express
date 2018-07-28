@@ -1,14 +1,14 @@
-const express   = require('express');
-const path      = require('path');
-const favicon   = require('serve-favicon');
-const logger    = require('morgan');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
 // const mongoose  = require('mongoose');
 
-const user      = require('./routes/api/user');
-const profile   = require('./routes/api/profile');
-const posts     = require('./routes/api/posts');
+const user = require('./api/routes/user');
+const profile = require('./api/routes/profile');
+const posts = require('./api/routes/posts');
 
-const app       = express();
+const app = express();
 
 // DB Config
 // const db        = require('./config/db');
@@ -30,7 +30,6 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
   res.send('Hello from Main Route.');
 });
-
 
 // use routes
 app.use('/api/user', user);
