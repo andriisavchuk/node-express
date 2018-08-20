@@ -21,8 +21,6 @@ const app = express();
 //   .then(() => console.log("MongoDB connected..."))
 //   .catch(err => console.log(err));
 
-// view engine setup
-
 // basic setup
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -39,5 +37,22 @@ app.get('/', (req, res) => {
 app.use('/api/user', user);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
+
+// handling 404 request error
+app.use((req, res, next) => {
+  const error = new Error('Not found');
+  error.status = 404;
+  next(error);
+});
+
+// handling other possible errors
+app.use((error, req, res, next) => {
+  res.status(error.status || 500);
+  res.json({
+    error: {
+      message: error.message
+    }
+  });
+});
 
 module.exports = app;
