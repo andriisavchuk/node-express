@@ -10,11 +10,15 @@ const posts = require('./api/routes/posts');
 
 const app = express();
 
-// DB Config
-// const db        = require('./config/keys');
+// DB config
+// const db = require("./config/keys");
 // mongoose.Promise = global.Promise;
-// mongoose.connect(db.mongoURI)
-//   .then(() => console.log('MongoDB connected...'))
+// mongoose
+//   .connect(
+//     db.mongoURI,
+//     { useNewUrlParser: true }
+//   )
+//   .then(() => console.log("MongoDB connected..."))
 //   .catch(err => console.log(err));
 
 // view engine setup
