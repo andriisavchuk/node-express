@@ -2,13 +2,15 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const cors = require('cors');
+const app = express();
 // const mongoose  = require('mongoose');
 
 const user = require('./api/routes/user');
 const profile = require('./api/routes/profile');
 const posts = require('./api/routes/posts');
 
-const app = express();
+
 
 // DB config
 // const db = require("./config/keys");
@@ -22,6 +24,7 @@ const app = express();
 //   .catch(err => console.log(err));
 
 // basic setup
+app.use(cors());
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.json());
